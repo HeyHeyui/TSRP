@@ -167,10 +167,17 @@ client.once('ready', async () => {
   console.log(Logged in as ${client.user.tag});
 
   // Register slash commands
+client.once('ready', async () => {
+  console.log(✅ Logged in as ${client.user.tag});
+
+  // Register slash commands
   try {
     console.log('Registering slash commands...');
+
+    // Register commands globally
     await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
-    console.log('Slash commands registered.');
+
+    console.log('Slash commands registered globally.');
   } catch (err) {
     console.error('Error registering commands:', err);
   }
