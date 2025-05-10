@@ -163,8 +163,17 @@ client.on('interactionCreate', async interaction => {
   }
 });
 
-client.once('ready', () => {
-  console.log(`✅ Logged in as ${client.user.tag}`);
+client.once('ready', async () => {
+  console.log(Logged in as ${client.user.tag});
+
+  // Register slash commands
+  try {
+    console.log('Registering slash commands...');
+    await rest.put(Routes.applicationCommands(CLIENT_ID), { body: commands });
+    console.log('Slash commands registered.');
+  } catch (err) {
+    console.error('Error registering commands:', err);
+  }
 });
 
 client.login(TOKEN);
