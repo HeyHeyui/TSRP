@@ -1,0 +1,3 @@
+discord.js
+dotenv
+express
