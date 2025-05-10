@@ -164,10 +164,6 @@ client.on('interactionCreate', async interaction => {
 });
 
 client.once('ready', async () => {
-  console.log(Logged in as ${client.user.tag});
-
-  // Register slash commands
-client.once('ready', async () => {
   console.log(✅ Logged in as ${client.user.tag});
 
   // Register slash commands
